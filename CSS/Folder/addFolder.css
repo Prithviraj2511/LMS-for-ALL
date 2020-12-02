@@ -1,0 +1,38 @@
+
+        .addfolder .addfolderIconButton {
+            display: none;
+        }
+
+        .addfolder .addfolderIcon {
+            position: absolute;
+            top: 2.4vh;
+            right: 2.8vw;
+            width: 7.5vh;
+            height: 7.7vh;
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .addfolder .addfolderIcon:hover {
+            animation-name: folderAnimation;
+            transform: scale(1.2);
+        }
+
+        .addfolder {
+            margin: 2vw 2vh;
+            border-radius: 20px;
+            height: 110px;
+            width: 120px;
+            background-color: lightblue;
+            padding: 3vh;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #b8b4b4;
+        }
+
+        .addfolder:hover {
+            box-shadow: 0 0 12px rgb(0, 0, 0);
+        }

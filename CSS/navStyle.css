@@ -1,0 +1,118 @@
+.wrapper .sidebar{
+    position: fixed;
+    width: 260px;
+    left: 0;
+    height: 100%;
+    margin-top: 100px;
+    background:linear-gradient(
+        to bottom,
+        #0674c2, #1f99f0
+      );
+    padding: 50px 0;
+    z-index: 10;
+}
+.wrapper .mobileTopbar{
+    width: 100%;
+    position: fixed;
+    background: blue;
+    height: 100px;
+}
+.wrapper .sidebar h2{
+    color: #141413;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.wrapper .sidebar ul li{
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-top: 1px solid rgba(225,225, 225, 0.06);
+    width: 100%;
+}
+.wrapper .sidebar ul li a{
+    color: #141413;
+    display: block;
+    width: 100%;
+    padding-left: 20px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: transform .2s;
+}
+.wrapper .sidebar ul li a .fas{
+    vertical-align: middle;
+}
+
+.wrapper .sidebar ul li:hover{
+    background: #0a20ad;
+}
+.wrapper .sidebar ul li a:hover{
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.wrapper .sidebar .active{
+    color: #fff;
+}
+
+
+.burger{
+    margin: 17px 10px;
+    display: none;
+}
+.burger div{
+    width: 27px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition:all 0.5s ease;
+}
+@media screen and (max-width:1024px){
+
+    .wrapper .mobileTopbar{
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        background: blue;
+    }
+    .wrapper .sidebar{
+        position: fixed;
+        width: 260px;
+        margin-top: 60px;
+        height: 100%;
+        background:linear-gradient(
+            to bottom,
+            #0674c2, #1f99f0
+          );
+        padding: 50px 0;
+        transform: translateX(-100%);
+        transition: transform 1s ease-in-out;
+    
+    }
+    .burger{
+        margin: 17px 10px;
+        width: fit-content;
+        display:block;
+        cursor: pointer;
+    }
+    .wrapper .sidebar.active{
+        transform: translateX(0%);
+    }   
+}
+@media screen and (max-width:450px){
+    .wrapper .sidebar.active{
+        transform: translateX(0%);
+    }
+    
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}

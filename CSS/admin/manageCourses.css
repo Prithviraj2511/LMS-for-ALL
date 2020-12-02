@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .content {
+    position: relative;
+    margin-left: 260px;
+    padding-top: 100px;
+    height:fit-content;
+    background-color: lightgrey;
+}
+
+.content .folderContainer{
+    position: relative;
+    margin:15px;
+    background-color: #139e7e;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+
+.content .accounts {
+    margin: 15px;
+    background-color: #139e7e;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.content .accounts svg {
+    transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+}
+.content .accounts svg:hover {
+    animation-name: folderAnimation;
+            transform: scale(1.1);
+}
+
+
+.content .recentUsers{
+    margin: 15px;
+    background-color: #139e7e;
+    position: relative;
+    border-radius: 20px;
+}
+
+
+.content .recentUsers .particularUser{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.navContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin:30px;
+}
+
+@media screen and (max-width:1024px) {
+
+    .wrapper .content {
+        margin-left: 0px;
+        padding-top: 60px;
+    }
+
+}

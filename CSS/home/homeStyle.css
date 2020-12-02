@@ -1,0 +1,360 @@
+body{
+    background-color:white;
+    overflow-x:hidden;
+}
+#logo{
+    position: relative;;
+    left:40px;
+    top:7px;
+}
+.btn1{
+    width: 130px;
+    height: 40px;
+    background-color:rgb(223, 2, 68);
+    border-radius:20px;
+    border:2px solid rgb(223, 2, 68);
+    text-align: center;
+    color:white;
+    position: relative;;
+    top:-20px;
+    left:850px;
+}
+.btn2{
+    width: 140px;
+    height: 40px;
+    background-color:rgb(3, 146, 230);
+    border-radius:20px;
+    border:2px solid rgb(3, 146, 230);
+    text-align: center;
+    color:white;
+    position: relative;;
+    top:-20px;
+    left:850px;
+}
+.email
+{
+    width: 500px;
+    height: 50px;
+    background-color:white;
+    border-radius:5px;
+    border:2px solid rgb(223, 2, 68);
+    text-align:left;
+    padding-left:25px;
+    font-size: 20px;
+    color:grey;
+    position: relative;
+    top:-110px;
+    left:120px;
+    outline:none;
+}
+.btn3{
+    width: 130px;
+    height: 40px;
+    background-color:rgb(223, 2, 68);
+    border-radius:20px;
+    border:2px solid rgb(223, 2, 68);
+    text-align: center;
+    color:white;
+    position: relative;
+    top:-90px;
+    left:120px;
+    outline:none;
+}
+.about{
+    color:grey;
+    position: relative;;
+    top:-70px;
+    left:380px;
+    font-size:large;
+}
+.feature{
+    color:grey;
+    position: relative;;
+    top:-110px;
+    left:480px;
+    font-size:large;
+}
+.contact{
+    color:grey;
+    position: relative;;
+    top:-150px;
+    left:595px;
+    font-size:large;
+}
+.log{
+    color:grey;
+    position: relative;;
+    top:-190px;
+    left:730px;
+    font-size:large;
+}
+.container{
+    font-family: "Times New Roman", Times, serif;
+    font-weight:bold;
+    font-size:60px;
+    color:rgb(223, 2, 68);
+    position: relative;;
+    top:-90px;
+    left:120px;
+}
+.row{
+    font-family: "Times New Roman", Times, serif;
+    font-weight:bold;
+    font-size:43px;
+    color:rgb(223, 2, 68);
+    position: relative;;
+    top:-600px;
+    left:700px;
+}
+.btn4{
+    width: 250px;
+    height: 56px;
+    background-color:white;
+    border-radius:28px;
+    border:2px solid black;
+    text-align: center;
+    color:black;
+    position:relative;
+    top:-550px;
+    left:700px;
+    outline:none;
+    font-size:15px;
+}
+.btn5{
+    width: 200px;
+    height: 45px;
+    background-color:white;
+    border-radius:20px;
+    border:2px solid black;
+    text-align: center;
+    color:black;
+    position:relative;
+    outline:none;
+}
+.btn6{
+    width: 200px;
+    height: 45px;
+    background-color:white;
+    border-radius:20px;
+    border:2px solid black;
+    text-align: center;
+    color:black;
+    position:relative;
+    outline:none;
+}
+.btn4:hover{
+    background-color: rgb(223, 2, 68);
+    border:2px solid rgb(223, 2, 68);
+    color:white;
+}
+.btn5:hover{
+    background-color: rgb(223, 2, 68);
+    border:2px solid rgb(223, 2, 68);
+    color:white;
+}
+.btn6:hover{
+    background-color: rgb(223, 2, 68);
+    border:2px solid rgb(223, 2, 68);
+    color:white;
+}
+.rectangle1{
+    width: 235px;
+    height: 125px;
+    background-color:rgb(3, 146, 230);
+    border-radius:20px;
+    border:2px solid rgb(3, 146, 230);
+    text-align: center;
+    color:white;
+    font-size:20px;
+    position: relative;
+    top:-250px;
+    left:510px;
+}
+.rectangle2{
+    width: 235px;
+    height: 125px;
+    background-color:rgb(2, 153, 35);
+    border-radius:20px;
+    border:2px solid rgb(2, 153, 35);
+    text-align: center;
+    color:white;
+    font-size:20px;
+    position: relative;
+    top:-380px;
+    left:890px;
+}
+.rectangle3{
+    width: 235px;
+    height: 125px;
+    background-color:rgb(255, 196, 0);
+    border-radius:20px;
+    border:2px solid rgb(255, 196, 0);
+    text-align: center;
+    color:white;
+    font-size:20px;
+    position: relative;
+    top:-510px;
+    left:130px;
+}
+#earphone{
+    position: relative;
+    top:-910px;
+    left:100px;
+}
+#laptop{
+    position: relative;;
+    top:-910px;
+    left:150px;
+}
+#clock{
+    position: relative;;
+    top:-910px;
+    left:710px; 
+}
+#security{
+    position: relative;;
+    top:-910px;
+    left:740px;
+}
+.clocktxt{
+    position: relative;;
+    top:-297px;
+    left:140px;
+    text-align:center;
+    color:grey;
+    font-size: large;
+}
+.laptoptxt{
+    position: relative;;
+    top:-580px;
+    left:-110px;
+    text-align:center;
+    color:grey;
+    font-size: large;
+}
+.securitytxt
+{
+    position: relative;;
+    top:-440px;
+    left:380px;
+    text-align:center;
+    color:grey;
+    font-size: large;
+}
+.earphonetxt{
+    position: relative;;
+    top:-700px;
+    left:-370px;
+    text-align:center;
+    color:grey;
+    font-size: large;
+}
+.gallerycontainer{
+    height:620px;
+    width:300px;
+    user-select: none;
+    padding:70px;
+    position:relative;
+    top:100px;
+    left:200px;
+}
+.gallerycontainer .slideshowcontainer{
+    width:100%;
+    overflow:hidden;
+    height:90%;
+    position:relative;
+}
+.gallerycontainer .slideshowcontainer .imageholder{
+    widows: 100%;
+    height:100%;
+    position:absolute;
+}
+.gallerycontainer .slideshowcontainer .imageholder img{
+    width:100%;
+    height:100%;
+}
+.gallerycontainer .leftarrow{
+    width:30px;
+    border:2px solid rgb(212, 212, 212);
+    background-color: white;
+    position:absolute;
+    left:0;
+    z-index:1;
+    transition :0.5s;
+    height:30px;
+    top:350px;
+    border-radius:20px;
+}
+.gallerycontainer .rightarrow{
+    width:30px;
+    border:2px solid rgb(212, 212, 212);
+    background-color: white;
+    position:absolute;
+    right:0;
+    z-index:1;
+    transition :0.5s;
+    height:30px;
+    top:350px;
+    border-radius: 20px;
+}
+.gallerycontainer .leftarrow .spanleftarrow{
+    display:block;
+    border: 2px solid rgb(212, 212, 212);
+    width:10px;
+    height:10px;
+    border-left:none;
+    border-bottom:none;
+    margin:auto;
+    position:relative;
+    left:3px;
+    right:0;
+    bottom:0;
+    top:8px;
+    transform:rotateZ(-135deg)
+}
+.gallerycontainer .rightarrow .spanrightarrow{
+    display:block;
+    border: 2px solid rgb(212, 212, 212);
+    width:10px;
+    height:10px;
+    border-left:none;
+    border-bottom:none;
+    margin:auto;
+    position:relative;
+    left:-1px;
+    right:0;
+    bottom:0;
+    top:8px;
+    transform:rotateZ(42deg)
+}
+.main1
+{
+    position:relative;
+    top:-600px;
+    left:670px;
+    font-size:20px;
+}
+.footer
+{
+    position: relative;
+    top:-650px;
+    left:0px;
+    background-color:rgb(238, 235, 235);
+    clear: both;
+    line-height: 10px;
+}
+.active{
+    color:rgb(223, 2, 68);
+}
+ol{
+    list-style-type:none;
+}
+ol li{
+
+}
+#footlogo{
+    position: relative;
+    top:-50px;
+    left:0px;
+    background-color:rgb(238, 235, 235);
+}

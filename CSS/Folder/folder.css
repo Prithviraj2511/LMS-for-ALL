@@ -1,0 +1,59 @@
+.folderIconButton{
+    display: none;
+}
+
+.folderDeleteButton{
+    display: none;
+}
+.folder .folderIcon {
+
+    width: 7.4vh;
+    height: 7.4vh;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.folder .folderIcon:hover {
+    animation-name: folderAnimation;
+    transform: scale(1.2);
+}
+
+.folder {
+    margin: 2vw;
+    border-radius: 20px;
+    height: 110px;
+    width: 120px;
+    background-color: lightblue;
+    padding: 3vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #b8b4b4;
+}
+
+.folder:hover {
+    box-shadow: 0 0 12px rgb(0, 0, 0);
+}
+
+.folder .folderName {
+    margin-top: 0.2vh;
+    font-size: 1em;
+    color: black;
+    overflow: hidden;
+}
+
+.folder .folderDelete {
+    top: 1.2vh;
+    right: 1.2vh;
+    color: #dcdde0;
+    cursor: pointer;
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+}
+
+.folder .folderDelete:hover {
+    color: black;
+}

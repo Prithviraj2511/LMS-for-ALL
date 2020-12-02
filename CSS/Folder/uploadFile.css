@@ -1,0 +1,38 @@
+.file .fileIconButton{
+    display: none;
+}
+.file .fileIcon {
+
+    width: 7.4vh;
+    height: 7.4vh;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+
+.file .fileIcon:hover {
+   
+    transform: scale(1.2);
+}
+.file {
+    margin: 2vw;
+    border-radius: 20px;
+    height: 110px;
+    width: 100px;
+    background-color: lightblue;
+    padding: 3vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #b8b4b4;
+}
+.file .fileUploadButton{
+    margin-top: 1.3vh;
+    cursor: pointer;
+}
+
+.file:hover{
+    box-shadow: 0 0 12px rgb(0, 0, 0);
+}

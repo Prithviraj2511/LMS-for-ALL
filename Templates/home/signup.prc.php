@@ -16,7 +16,7 @@ if (isset($_POST["signup-submit"])) {
     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: signin-signup.php?error=invalidemail&clgname=" . $clgname);
         exit();
-    } else if (!preg_match("/^[a-zA-Z0-9 ]*$/", $clgname)) {
+    } else if (!preg_match("/^[a-zA-Z0-9 .]*$/", $clgname)) {
         header("Location: signin-signup.php?error=invalidclgname&email=" . $email);
         exit();
     } else if ($pass !== $repeatpass) {

@@ -21,9 +21,11 @@
     align-items: center;
 }
 .wrapper .mobileTopbar .clgHeading{
-    font-size: 2em;
+    font-size: 1em;
     width: 100%;
     text-align: center;
+    letter-spacing: 2px;
+    color: wheat;
 }
 .wrapper .sidebar h2{
     color: #141413;
@@ -99,8 +101,8 @@
     
     }
     .wrapper .mobileTopbar .clgHeading{
-        font-size: 1.2em;
-        margin-left: 30px;
+        font-size: 0.7em;
+        letter-spacing: 2px;
     }
     .burger{
         margin: 17px 10px;

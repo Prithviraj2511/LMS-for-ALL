@@ -129,6 +129,18 @@ if (isset($_SESSION["adminid"])) {
     </head>
 
     <body>
+        <?php
+        if (isset($_POST['exitAccounts'])) {
+            if ($_SESSION['parent_id'] == $_SESSION['accessId']) {
+                header("Location: ../dashboardHome.php");
+            } else {
+                header("Location: ../courses/manageCoursesAdmin.php");
+            }
+        }
+        ?>
+        <form action="manageAccounts.php" method="post">
+            <input type="submit" name="exitAccounts" value="Exit">
+        </form>
         <table id="users">
             <thead>
                 <tr>
@@ -158,8 +170,11 @@ if (isset($_SESSION["adminid"])) {
                     }
                 }
 
-
-                $cursor = $stuAccounts->find(["accessId" => strval($accessId)]);
+                if ($_SESSION['parent_id'] == $_SESSION['accessId']) {
+                    $cursor = $stuAccounts->find(["clgId" => new MongoDB\BSON\ObjectID($_SESSION["user_id"])]);
+                } else {
+                    $cursor = $stuAccounts->find(["accessId" => strval($accessId)]);
+                }
                 $indexCounter = 0;
                 foreach ($cursor as $acc) {
                     $indexCounter++;
@@ -248,14 +263,18 @@ if (isset($_SESSION["adminid"])) {
             </thead>
             <tbody>
                 <?php
-                $cursor = $teacherAccounts->find(["accessId" => strval($accessId)]);
-                $indexCounter=0;
+                if ($_SESSION['parent_id'] == $_SESSION['accessId']) {
+                    $cursor = $teacherAccounts->find(["clgId" => new MongoDB\BSON\ObjectID($_SESSION["user_id"])]);
+                } else {
+                    $cursor = $teacherAccounts->find(["accessId" => strval($accessId)]);
+                }
+                $indexCounter = 0;
                 foreach ($cursor as $acc) {
                     $indexCounter++;
                 ?>
                     <tr>
                         <form action="updateTeacherAcc.php" method="post">
-                            <td><?php echo $indexCounter?></td>
+                            <td><?php echo $indexCounter ?></td>
                             <input type="hidden" name="teacher_id" value=<?php echo $acc['_id'] ?>>
                             <td><input type="text" name="teacher_name" id="" value='<?php echo $acc["name"] ?>'></td>
                             <td>

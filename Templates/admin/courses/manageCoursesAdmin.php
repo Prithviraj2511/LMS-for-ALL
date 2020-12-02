@@ -244,7 +244,7 @@ include "deleteCourse.php";
             </div>
             <div class="accounts" id="accounts">
                     <div class="a">
-                        <form action="accounts/manageAccounts.php" method="post">
+                        <form action="../accounts/manageAccounts.php" method="post">
                         <label class="accountButton">
                         <svg style="width: 120px; height:120px" xmlns="http://www.w3.org/2000/svg" height="512pt" viewBox="-14 0 512 512" width="512pt">
                             <path d="m20.605469 438.855469c-11.378907 0-20.605469-9.222657-20.605469-20.601563v-377.046875h329.65625v398.070313zm0 0" fill="#d8d8d8" />

@@ -2,7 +2,7 @@
 
 session_start();
 
-include "../../../connectDatabase.php";
+include "../../connectDatabase.php";
 $quiz = $db->quiz;
 $quetions = $db->quetions;
 $grades=$db->grades;

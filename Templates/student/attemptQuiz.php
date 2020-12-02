@@ -10,20 +10,17 @@
 <body>
     <?php
     session_start();
-
-    $_SESSION['user_id'] = "5fc23dfc0e520000fd004d12";
-    $_SESSION['quiz_id'] = "5fc2f9b6991300000a0012b8";
+     
     // accessing collections from the database
-    include "../../../connectDatabase.php";
+    include "../../connectDatabase.php";
     $quiz = $db->quiz;
     $quetions = $db->quetions;
+    $folders=$db->folders;
 
     // id of the quiz in quiz collection
-    $quiz_id = new MongoDB\BSON\ObjectID($_SESSION['quiz_id']);
-
-    ?>
-    <?php
-    $particularQuiz = $quiz->findOne(["_id" => $quiz_id]);
+    $quizFolder = $folders->findOne(['_id'=>new MongoDB\BSON\ObjectID($_POST["clickedQuiz_id"])]);
+    $_SESSION['quiz_id']=$quizFolder['quiz_id'];
+    $particularQuiz = $quiz->findOne(["_id" => $quizFolder['quiz_id']]);
     ?>
     <h1><?php echo $particularQuiz['name']?></h1>
     <?php
@@ -89,7 +86,7 @@
 
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    window.location.replace("http://localhost/LMS for ALL/Templates/admin/quiz/attemptQuiz.php");
+                    window.location.replace("http://localhost/LMS for ALL/Templates/student/attemptQuiz.php");
                 }
             };
             var params = JSON.stringify(attemptArr);

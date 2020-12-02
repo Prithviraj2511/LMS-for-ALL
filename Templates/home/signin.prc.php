@@ -27,6 +27,7 @@ if ($_POST["sign-in"]) {
                     session_start();
                     $_SESSION['stuid'] = $users['_id'];
                     $_SESSION['username'] = $users['name'];
+                    $_SESSION['clg_id']=$users['clgId'];
                     $_SESSION['clgname'] = $users['clgname'];
                     $_SESSION['accessId']=$users['accessId'];
                     $_SESSION['userEmail']=$users['email'];
@@ -59,6 +60,7 @@ if ($_POST["sign-in"]) {
                     session_start();
                     $_SESSION['teacherid'] = $users['_id'];
                     $_SESSION['username'] = $users['name'];
+                    $_SESSION['clg_id']=$users['clgId'];
                     $_SESSION['clgname'] = $users['clgname'];
                     $_SESSION['accessId']=$users['accessId'];
                     $_SESSION['userEmail']=$users['email'];

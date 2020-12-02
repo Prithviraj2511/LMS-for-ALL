@@ -4,6 +4,10 @@
         <div class="line2"></div>
         <div class="line3"></div>
     </div>
+    <div class="clgHeading">
+        <h1><?php echo $_SESSION['clgname'] ?></h1>
+    </div>
+
 </div>
 <div class="sidebar" style="z-index: 15;">
 

@@ -9,6 +9,7 @@ if (isset($_SESSION['stuid'])) {
     $teacherAccounts = $db->teacherAccounts;
     $grades=$db->grades;
     $_SESSION['user_id']=$_SESSION['stuid'];
+    $_SESSION['genral_id']=$accounts->findOne(['_id'=>$_SESSION['clg_id']],['accessId'=>1])['accessId'];
     // whenever folder is clicked update variables and get inside of it
     if (isset($_GET["clickedfolder"])) {
         $parentFolderId = $_GET["clickedfolder_id"];
@@ -66,6 +67,7 @@ if (isset($_SESSION['stuid'])) {
     <link rel="stylesheet" href="../../../../LMS for ALL/CSS/navStyle.css">
     <link rel="stylesheet" href="../../CSS/admin/manageCourses.css">
     <link rel="stylesheet" href="../../CSS/admin/announcement.css">
+    <link rel="stylesheet" href="../../../CSS/admin/recentUsers.css">
     <link rel="stylesheet" href="../../CSS/Folder/addFolder.css">
     <link rel="stylesheet" href="../../CSS/Folder/folder.css">
     <link rel="stylesheet" href="../../CSS/Folder/uploadFile.css">
@@ -155,59 +157,72 @@ if (isset($_SESSION['stuid'])) {
             </div>
             <?php include './announcement.php'; ?>
             <div class="recentUsers" id="recentUsers">
-                <?php
-
-                $cursor = $studentAccounts->find(['clgId' => $clg_id], [
-                    'sort' => ['lastSeen' => -1],
-                    'limit' => 5
-                ]);
-                foreach ($cursor as $person) {
-                    if (isset($person['lastSeen'])) {
-                        // get all the information of particular person
-                        $utcdatetime = $person['lastSeen'];
-                        $datetime = $utcdatetime->toDateTime();
-                        $time = $datetime->format(DATE_RSS);
-                        /********************Convert time local timezone*******************/
-                        $dateInUTC = $time;
-                        $time = strtotime($dateInUTC . ' UTC');
-                        $dateInLocal = date("Y-m-d H:i:s", $time);
-                ?>
-                        <div class="particularUser">
-                            <span><?php echo $person['name'] ?></span>
-                            <span><?php echo $person['email'] ?></span>
-                            <span><?php echo $dateInLocal ?></span>
-                        </div>
                     <?php
-                    }
-                }
 
-                $cursor = $teacherAccounts->find(['clgId' => $clg_id], [
-                    'sort' => ['lastSeen' => -1],
-                    'limit' => 5
-                ]);
-
-                foreach ($cursor as $person) {
-                    if (isset($person['lastSeen'])) {
-                        // get all the information of particular person
-                        $utcdatetime = $person['lastSeen'];
-                        $datetime = $utcdatetime->toDateTime();
-                        $time = $datetime->format(DATE_RSS);
-                        /********************Convert time local timezone*******************/
-                        $dateInUTC = $time;
-                        $time = strtotime($dateInUTC . ' UTC');
-                        $dateInLocal = date("Y-m-d H:i:s", $time);
+                    $cursor = $studentAccounts->find(['clgId' => $clg_id], [
+                        'sort' => ['lastSeen' => -1],
+                        'limit' => 5
+                    ]);
                     ?>
-                        <div class="particularUser">
-                            <span><?php echo $person['name'] ?></span>
-                            <span><?php echo $person['email'] ?></span>
-                            <span><?php echo $dateInLocal ?></span>
-                        </div>
-                        <br>
-                <?php
-                    }
-                }
-                ?>
-            </div>
+                    <table class="table1">
+                        <thread>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Time</th>
+                            </tr>
+                        </thread>
+                        <?php
+                        foreach ($cursor as $person) {
+                            if (isset($person['lastSeen'])) {
+                                // get all the information of particular person
+                                $utcdatetime = $person['lastSeen'];
+                                $datetime = $utcdatetime->toDateTime();
+                                $time = $datetime->format(DATE_RSS);
+                                /********************Convert time local timezone*******************/
+                                $dateInUTC = $time;
+                                $time = strtotime($dateInUTC . ' UTC');
+                                $dateInLocal = date("Y-m-d H:i:s", $time);
+                        ?>
+
+                                <tr>
+                                    <td><?php echo $person['name'] ?></td>
+                                    <td><?php echo $person['email'] ?></td>
+                                    <td><?php echo $dateInLocal ?></td>
+                                </tr>
+
+                            <?php
+                            }
+                        }
+
+                        $cursor = $teacherAccounts->find(['clgId' => $clg_id], [
+                            'sort' => ['lastSeen' => -1],
+                            'limit' => 5
+                        ]);
+
+                        foreach ($cursor as $person) {
+                            if (isset($person['lastSeen'])) {
+                                // get all the information of particular person
+                                $utcdatetime = $person['lastSeen'];
+                                $datetime = $utcdatetime->toDateTime();
+                                $time = $datetime->format(DATE_RSS);
+                                /********************Convert time local timezone*******************/
+                                $dateInUTC = $time;
+                                $time = strtotime($dateInUTC . ' UTC');
+                                $dateInLocal = date("Y-m-d H:i:s", $time);
+                            ?>
+                                <tr>
+                                    <td><?php echo $person['name'] ?></td>
+                                    <td><?php echo $person['email'] ?></td>
+                                    <td><?php echo $dateInLocal ?></td>
+                                </tr>
+
+                        <?php
+                            }
+                        }
+                        ?>
+                    </table>
+                </div>
         </div>
     </div>
 </body>

@@ -1,0 +1,25 @@
+.table1 {
+    border-collapse: separate;
+    background-color: #139e7e;
+    border-radius: 6px;
+    border: solid black 1px;
+    width: 100%;
+  }
+
+  .table1 td,
+  .table1 th {
+    border-left: solid black 1px;
+    border-top: solid black 1px;
+    padding: 10px;
+  }
+
+  .table1 th {
+    background-color: blue;
+    border-top: none;
+  }
+
+  .table1 td:first-child,.table1 th:first-child {
+    border-left: none;
+    padding: 10px;
+    margin-left: 10px;
+  }

@@ -31,6 +31,7 @@ if (isset($_POST["signup-submit"])) {
             "phone"=>$phone,
             "password"=>$hashedpass
         ]);
+        
         header("location: signin-signup.php?signup=success");
         exit();
     }

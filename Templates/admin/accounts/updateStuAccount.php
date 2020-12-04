@@ -20,6 +20,7 @@ if (isset($_POST['stu_update'])) {
             ]
         ]
     );
+    header("Location: ./manageAccounts.php");
 } elseif (isset($_POST['stu_delete'])) {
     session_start();
     include "../../../connectDatabase.php";
@@ -32,6 +33,7 @@ if (isset($_POST['stu_update'])) {
         ["_id" => new MongoDB\BSON\ObjectID($access)],
         ['$pull' => ["content" => $id]]
     );
+    header("Location: ./manageAccounts.php");
 } else {
     header("Location: ../../404.html");
     exit();

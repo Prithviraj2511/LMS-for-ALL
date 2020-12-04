@@ -62,7 +62,7 @@ if (isset($_POST['UpdateQuiz'])) {
 
     header("Location: quizEdit.php");
 } else if (isset($_POST['DeleteQue'])) {
-    include "../connectDatabase.php";
+    include "../../../connectDatabase.php";
     $quetions = $db->quetions;
     $quiz = $db->quiz;
     $qid = $_POST['_id'];
@@ -78,7 +78,7 @@ if (isset($_POST['UpdateQuiz'])) {
     header("Location: quizEdit.php");
 } elseif (isset($_POST['DeleteOpt'])) {
     # code...
-    include "../connectDatabase.php";
+    include "../../../connectDatabase.php";
     $quetions = $db->quetions;
     $qid = $_POST['_id'];
     $optNumber = number_format($_POST['DeleteOpt']);

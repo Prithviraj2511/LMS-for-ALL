@@ -14,7 +14,6 @@
 }
 
 .folder .folderIcon:hover {
-    animation-name: folderAnimation;
     transform: scale(1.2);
 }
 
@@ -56,4 +55,19 @@
 
 .folder .folderDelete:hover {
     color: black;
+}
+
+.stats{
+    border-style:none;
+    background:none;
+    text-align:center;
+    cursor:pointer;
+    border-bottom:solid;
+    border-color:blue;
+    color: rgb(228, 36, 36);
+    border-width:2px;
+    transition: transform 0.2s ease-in-out;
+}
+.stats:hover{
+    transform: scale(1.2);
 }

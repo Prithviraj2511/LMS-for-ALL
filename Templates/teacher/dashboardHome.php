@@ -72,7 +72,7 @@ if(isset($_SESSION['teacherid'])){
     <link rel="stylesheet" href="../../../../LMS for ALL/CSS/navStyle.css">
     <link rel="stylesheet" href="../../CSS/admin/manageCourses.css">
     <link rel="stylesheet" href="../../CSS/admin/announcement.css">
-    <link rel="stylesheet" href="../../../CSS/admin/recentUsers.css">
+    <link rel="stylesheet" href="../../CSS/admin/recentUsers.css">
     <link rel="stylesheet" href="../../CSS/Folder/addFolder.css">
     <link rel="stylesheet" href="../../CSS/Folder/folder.css">
     <link rel="stylesheet" href="../../CSS/Folder/uploadFile.css">

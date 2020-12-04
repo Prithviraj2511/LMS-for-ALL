@@ -8,6 +8,7 @@ if (isset($_SESSION['stuid'])) {
     $studentAccounts = $db->studentAccounts;
     $teacherAccounts = $db->teacherAccounts;
     $grades=$db->grades;
+    $quiz=$db->quiz;
     $_SESSION['user_id']=$_SESSION['stuid'];
     $_SESSION['genral_id']=$accounts->findOne(['_id'=>$_SESSION['clg_id']],['accessId'=>1])['accessId'];
     // whenever folder is clicked update variables and get inside of it
@@ -67,7 +68,7 @@ if (isset($_SESSION['stuid'])) {
     <link rel="stylesheet" href="../../../../LMS for ALL/CSS/navStyle.css">
     <link rel="stylesheet" href="../../CSS/admin/manageCourses.css">
     <link rel="stylesheet" href="../../CSS/admin/announcement.css">
-    <link rel="stylesheet" href="../../../CSS/admin/recentUsers.css">
+    <link rel="stylesheet" href="../../CSS/admin/recentUsers.css">
     <link rel="stylesheet" href="../../CSS/Folder/addFolder.css">
     <link rel="stylesheet" href="../../CSS/Folder/folder.css">
     <link rel="stylesheet" href="../../CSS/Folder/uploadFile.css">

@@ -76,49 +76,54 @@ foreach ($cursor as $content) {
                 </div>
                 <?php
             } elseif ($insideFolder['type'] == 'quiz') {
-                $res = $grades->findOne(['quiz_id' => $insideFolder['quiz_id'], 'stu_id' => $_SESSION['user_id']]);
-                if (!$res) {
-                ?>
-                    <div class="folder">
-                        <form class="folderForm" action="./attemptQuiz.php" method="post">
 
-                            <div>
-                                <label>
-                                    <input type="submit" name="clickedQuiz" class="folderIconButton" value="">
-                                    <svg class="folderIcon" style="color:#3d6ed2;" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <polyline points="12 6 12 12 16 14" /></svg>
-                                </label>
-                            </div>
-                            <input type="hidden" name="clickedQuiz_id" value=<?php echo $insideFolder['_id'] ?>>
-                            <input type="hidden" name="clickedQuiz_name" value=<?php echo "'" . $insideFolder['folder-name'] . "'" ?>>
-                            <div class="folderName"><?php echo $insideFolder['folder-name'] ?></div>
-                        </form>
-                    </div>
-                <?php
-                }
-                //quiz is already attempted.
-                else {
+                // quiz folder fetched as we want quiz_id which is stored inside it
+                $q = $quiz->findOne(["_id" => new MongoDB\BSON\ObjectID($insideFolder['quiz_id'])]);
+                if ($q['completed']) {
+                    $res = $grades->findOne(['quiz_id' => $insideFolder['quiz_id'], 'stu_id' => $_SESSION['user_id']]);
+                    if (!$res) {
                 ?>
-                    <div class="folder">
-                        <form class="folderForm" action="./attemptedQuiz.php" method="post">
+                        <div class="folder">
+                            <form class="folderForm" action="./attemptQuiz.php" method="post">
 
-                            <div>
-                                <label>
-                                    <input type="submit" name="clickedQuiz" class="folderIconButton" value="">
-                                    <svg class="folderIcon" style="color:#3d6ed2;" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <polyline points="12 6 12 12 16 14" /></svg>
-                                </label>
-                            </div>
-                            <input type="hidden" name="clickedQuiz_id" value=<?php echo $insideFolder['_id'] ?>>
-                            <input type="hidden" name="clickedQuiz_name" value=<?php echo "'" . $insideFolder['folder-name'] . "'" ?>>
-                            <input type="hidden" name="attempt" value='<?php echo $res['attempt']?>'>
-                            <input type="hidden" name="marks" value="<?php echo $res['marks']?>">
-                            <div class="folderName"><?php echo $insideFolder['folder-name'] ?></div>
-                        </form>
-                    </div>
+                                <div>
+                                    <label>
+                                        <input type="submit" name="clickedQuiz" class="folderIconButton" value="">
+                                        <svg class="folderIcon" style="color:#3d6ed2;" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline points="12 6 12 12 16 14" /></svg>
+                                    </label>
+                                </div>
+                                <input type="hidden" name="clickedQuiz_id" value=<?php echo $insideFolder['_id'] ?>>
+                                <input type="hidden" name="clickedQuiz_name" value=<?php echo "'" . $insideFolder['folder-name'] . "'" ?>>
+                                <div class="folderName"><?php echo $insideFolder['folder-name'] ?></div>
+                            </form>
+                        </div>
+                    <?php
+                    }
+                    //quiz is already attempted.
+                    else {
+                    ?>
+                        <div class="folder">
+                            <form class="folderForm" action="./attemptedQuiz.php" method="post">
+
+                                <div>
+                                    <label>
+                                        <input type="submit" name="clickedQuiz" class="folderIconButton" value="">
+                                        <svg class="folderIcon" style="color:#3d6ed2;" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline points="12 6 12 12 16 14" /></svg>
+                                    </label>
+                                </div>
+                                <input type="hidden" name="clickedQuiz_id" value=<?php echo $insideFolder['_id'] ?>>
+                                <input type="hidden" name="clickedQuiz_name" value=<?php echo "'" . $insideFolder['folder-name'] . "'" ?>>
+                                <input type="hidden" name="attempt" value='<?php echo $res['attempt'] ?>'>
+                                <input type="hidden" name="marks" value="<?php echo $res['marks'] ?>">
+                                <div class="folderName"><?php echo $insideFolder['folder-name'] ?></div>
+                            </form>
+                        </div>
                 <?php
+                    }
                 }
             } else {
                 ?>

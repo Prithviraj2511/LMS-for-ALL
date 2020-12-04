@@ -83,6 +83,8 @@ foreach ($cursor as $content) {
                     </form>
                 <?php
                 } elseif ($insideFolder['type'] == 'quiz') {
+                    // quiz folder fetched as we want quiz_id which is stored inside it
+                    $q=$folders->findOne(["_id" => new MongoDB\BSON\ObjectID($insideFolder['_id'])]);
                 ?>
 
                     <form class="folderForm" action="./Quiz/quizFileActions.php" method="post">
@@ -105,7 +107,8 @@ foreach ($cursor as $content) {
                         <input type="hidden" name="clickedQuiz_id" value=<?php echo $insideFolder['_id'] ?>>
                         <input type="hidden" name="clickedQuiz_name" value=<?php echo "'" . $insideFolder['folder-name'] . "'" ?>>
                         <div class="folderName"><?php echo $insideFolder['folder-name'] ?></div>
-
+                        <input type="hidden" name="quiz_id" value="<?php echo $q['quiz_id']?>">
+                        <input class="stats" type="submit" name="quiz_stats" value="Stats" >
                     </form>
 
                     <?php

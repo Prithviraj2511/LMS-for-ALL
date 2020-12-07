@@ -45,7 +45,7 @@
           <input type="password" name="pass" required maxlength="12">
         </label>
         <button class="submit" type="submit" name="sign-in" value="Sign In">Sign In</button>
-        <p class="forgot-pass">Forgot Password ?</p>
+        <p class="forgot-pass"><a href="send_link_forget_pass.php">Forgot Password ?</a></p>
       </form>
       <label>
       <?php

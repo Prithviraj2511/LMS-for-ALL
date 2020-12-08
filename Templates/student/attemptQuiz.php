@@ -108,7 +108,13 @@
 
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    window.location.replace("http://localhost/LMS%20for%20ALL/Templates/student/dashboardHome.php");
+                    const websiteLink = document.URL
+                    if (websiteLink.includes('localhost')) {
+                        window.location.replace("http://localhost/LMS%20for%20ALL/Templates/student/dashboardHome.php");
+                    }
+                    else{
+                        window.location.replace("void-lms-for-all.herokuapp.com/Templates/student/dashboardHome.php")
+                    }
                 }
             };
             var params = JSON.stringify(attemptArr);

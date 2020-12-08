@@ -65,7 +65,7 @@ if (isset($_SESSION['stuid'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="void-lms-for-all.herokuapp.com/CSS/navStyle.css">
+    <link rel="stylesheet" href="../../CSS/navStyle.css">
     <link rel="stylesheet" href="../../CSS/admin/manageCourses.css">
     <link rel="stylesheet" href="../../CSS/admin/announcement.css">
     <link rel="stylesheet" href="../../CSS/admin/recentUsers.css">

@@ -1,4 +1,6 @@
+
 <?php
+//
 session_start();
 if (isset($_SESSION["adminid"])) {
     $_SESSION["user_id"] = $_SESSION["adminid"];
@@ -67,7 +69,7 @@ if (isset($_SESSION["adminid"])) {
             <div class="content" style="z-index: 10;">
                 <div class="manageCourse" style="height: 200px;">
                     <?php
-                    include "courses/manageCourses.php"
+                    include "./manageCourses.php"
                     ?>
                 </div>
                 <div class="accounts" id="accounts">

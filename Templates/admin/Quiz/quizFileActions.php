@@ -32,7 +32,12 @@ elseif (isset($_POST['deleteQuiz'])) {
     
     $folders->deleteOne(["_id" => new MongoDB\BSON\ObjectID($id)]);
     
-    header("Location: ../dashboardHome.php");
+    if($_SESSION['parent_id']==$_SESSION['accessId']){
+        header("Location: ../dashboardHome.php");
+    }
+    else{
+        header("Location: ../courses/manageCoursesAdmin.php");
+    }
 }
 else{
     echo "nothing";

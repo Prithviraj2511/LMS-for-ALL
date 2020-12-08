@@ -111,7 +111,7 @@ foreach ($cursor as $content) {
                     <?php
                 } else {
                     ?>
-                        <form class="folderForm" action="../../../../LMS for ALL/Templates/admin/courses/manageCoursesAdmin.php" method="get">
+                        <form class="folderForm" action="void-lms-for-all.herokuapp.com/Templates/admin/courses/manageCoursesAdmin.php" method="get">
                             <div>
                                 <label>
                                     <input type="submit" name="deleteFolder" class="folderDeleteButton" value="">

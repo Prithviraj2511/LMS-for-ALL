@@ -108,7 +108,7 @@
 
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    window.location.replace("http://localhost/LMS for ALL/Templates/student/dashboardHome.php");
+                    window.location.replace("void-lms-for-all.herokuapp.com/Templates/student/dashboardHome.php");
                 }
             };
             var params = JSON.stringify(attemptArr);

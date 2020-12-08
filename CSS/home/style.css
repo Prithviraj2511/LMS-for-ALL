@@ -945,7 +945,9 @@ html {
   .field {
     width: 35rem;
   }
-
+  .card-info {
+    visibility:visible;
+  }
   .input-group textarea {
     max-width: 35rem;
   }
@@ -968,7 +970,10 @@ html {
   .change .hamburger-menu {
     right: 38rem;
   }
-
+  .card-info {
+    visibility:visible;
+   
+  }
   .service {
     width: 30rem;
   }

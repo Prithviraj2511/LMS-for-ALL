@@ -1,12 +1,20 @@
+
+
 window.onload = () => {
   setTimeout(() => {
     document.querySelector("body").classList.add("display");
   }, 4000);
 };
 
+const menuLink = document.querySelectorAll(".menu-link")
+
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change");
 });
+
+menuLink.forEach((lnk) => lnk.addEventListener('click', () => {
+  document.querySelector(".container").classList.toggle("change");
+}))
 
 document.querySelector(".scroll-btn").addEventListener("click", () => {
   document.querySelector("html").style.scrollBehavior = "smooth";

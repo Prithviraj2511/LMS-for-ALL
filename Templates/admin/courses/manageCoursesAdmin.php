@@ -68,7 +68,7 @@ include "deleteCourse.php";
     <div class="wrapper">
         <?php
         // actions related to add folder
-        include "../dashboardHeader.php";
+        include "dashboardHeader.php";
         include "addFolder.php";
         ?>
         <div class="content">
